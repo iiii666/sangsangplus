@@ -12,22 +12,27 @@
         android:layout_marginTop="250dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:hint="아이디" />
     <EditText
         android:id="@+id/as_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:hint="비밀번호" />
     <EditText
         android:id="@+id/as_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
         android:hint="주소" />
     <Button
         android:id="@+id/as_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/yellow"
         android:text="완료"/>
 
 
