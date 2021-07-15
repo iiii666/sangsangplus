@@ -29,11 +29,8 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-<<<<<<< HEAD
         android:text="로그인gogo" />
-=======
-        android:text="로그인hhh" />
->>>>>>> develop
+
 
     <Button
         android:id="@+id/btn_move_assign"
