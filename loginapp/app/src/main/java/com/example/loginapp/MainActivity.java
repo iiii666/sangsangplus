@@ -57,7 +57,10 @@ public class MainActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPassword = jsonObject.getString("userPassword");
                                 Toast.makeText(getApplicationContext(), "로그인 에 성공하였습니다", Toast.LENGTH_SHORT).show();
-
+                                Intent intent = new Intent(MainActivity.this,SubActivity.class);
+                                intent.putExtra("userID",userID);
+                                intent.putExtra("userPassword",userPassword);
+                                startActivity(intent);
 
 
                             } else {
@@ -75,10 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 queue.add(loginRequest);
-                Intent intent = new Intent(MainActivity.this,SubActivity.class);
-                intent.putExtra("userID",userID);
-                intent.putExtra("userPassword",userPassword);
-                startActivity(intent);
+
             }
 
         });
