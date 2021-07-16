@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/kakaotalk_20210716_130131343"
 
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="184dp"
-        android:layout_marginTop="120dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <EditText
