@@ -5,36 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/kakaotalk_20210716_130131343"
     tools:context=".SubActivity">
 
-
-
-
-    <TextView
-        android:id="@+id/tv_sub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="30sp"
-        />
-    <TextView
-        android:id="@+id/tv_sub_pw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="30dp"
-        />
-
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="자취방을 지켜라! " />
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/mailll_naver" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <ImageButton
+        android:id="@+id/imageButton3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="상상더하기!!" />
+        android:maxWidth="150dp"
+        android:maxHeight="180dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="35dp"
+        app:srcCompat="@drawable/mail_naver" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="180dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/_f850354_ac2e_489b_946a_af5c27868d20__1_" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="415dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="450dp"
+        android:maxHeight="180dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/_dad9c34_a00a_4c06_aa1a_0d3871f3d268" />
+
+
 
 </LinearLayout>
