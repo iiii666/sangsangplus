@@ -5,46 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/kakaotalk_20210716_130131343"
 
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <EditText
         android:id="@+id/et_test_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="@color/black"
+<<<<<<< HEAD
         android:layout_marginTop="300dp"
+=======
+        android:layout_marginTop="20dp"
+>>>>>>> 75b294a7893636e6e719e7a379ff47b18877ef77
         android:hint="아이디" />
+
 
     <EditText
         android:id="@+id/et_test_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/black"
-        android:hint="비밀번호"/>
+        android:hint="비밀번호"
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/btn_move_lg"
         android:layout_width="257dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/yellow"
+        android:layout_gravity="center_horizontal"
 
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/yellow"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:text="로그인" />
+        android:text="로그인"
+        android:textColor="@color/black" />
 
 
     <Button
         android:id="@+id/btn_move_assign"
         android:layout_width="253dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/yellow"
         android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/yellow"
         android:gravity="center"
-        android:textColor="@color/black"
-        android:text="회원가입" />
+        android:text="회원가입"
+        android:textColor="@color/black" />
 
 
 
