@@ -14,19 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:layout_marginTop="100dp"
-        app:srcCompat="@mipmap/ic_launcher_foreground" />
+        app:srcCompat="@mipmap/ic_launcher_foreground"
+        tools:ignore="VectorDrawableCompat" />
 
     <EditText
         android:id="@+id/et_test_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="아이디"
         android:textColorHint="@color/black"
-<<<<<<< HEAD
-        android:layout_marginTop="300dp"
-=======
-        android:layout_marginTop="20dp"
->>>>>>> 75b294a7893636e6e719e7a379ff47b18877ef77
-        android:hint="아이디" />
+        android:layout_marginTop="3dp" />
 
 
     <EditText
