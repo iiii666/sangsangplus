@@ -5,8 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/kakaotalk_20210720_021545133"
+    android:background="@drawable/kakaotalk_20210716_130131343"
     tools:context=".Service">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:text="서비스 안내" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/kakaotalk_20210720_022212524" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:text="      1) 센서가 큰 소리를 인식하거나 충격을 감지하면 본인의 휴대폰에"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:textColor="@color/black"
+        android:text="          신고 여부를 묻는 알림이 오게됩니다."
+        />
+
 
 
 </LinearLayout>
