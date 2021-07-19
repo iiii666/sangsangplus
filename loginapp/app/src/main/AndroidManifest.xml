@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Loginapp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Myinfo"></activity>
+        <activity android:name=".Service"></activity>
+        <activity android:name=".Myinfo" />
         <activity android:name=".AssignActivity" />
         <activity android:name=".SubActivity" />
         <activity android:name=".MainActivity">

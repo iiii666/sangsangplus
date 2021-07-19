@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -37,6 +38,8 @@ public class SubActivity extends AppCompatActivity {
     private int port = 8888; //서버랑 꼭 포트 번호 같게 만들어주고
     private String SERVER_IP = "192.168.0.194";  //서버 아이피 주소 적어주세요!
 
+    private ImageButton btn_service;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,19 @@ public class SubActivity extends AppCompatActivity {
         Log.d("connect success","connect success");
 
         TextView = (TextView)findViewById(R.id.TextView);
+
+
+
+        //살짝 바꿨는데 잘 모르겠어요...
+
+        btn_service = findViewById(R.id.btn_service);
+        btn_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SubActivity.this , Service.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -101,6 +117,8 @@ public class SubActivity extends AppCompatActivity {
         }
     }
 }
+
+
 
 
 
