@@ -16,6 +16,7 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/yellow"
         android:textColor="@color/black"
+        android:textSize="20dp"
         android:text="서비스 안내" />
 
     <ImageView
