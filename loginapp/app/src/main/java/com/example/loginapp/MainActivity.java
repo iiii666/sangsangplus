@@ -3,7 +3,6 @@ package com.example.loginapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,11 +56,9 @@ public class MainActivity extends AppCompatActivity {
                                 String userID = jsonObject.getString("userID");
                                 String userPassword = jsonObject.getString("userPassword");
                                 Toast.makeText(getApplicationContext(), "로그인 에 성공하였습니다", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(MainActivity.this,SubActivity.class);
-                                intent.putExtra("userID",userID);
-                                intent.putExtra("userPassword",userPassword);
-                                startActivity(intent);
 
+                                Intent intent2 = new Intent(MainActivity.this,SubActivity.class);
+                                startActivity(intent2);
 
                             } else {
 
@@ -71,13 +68,15 @@ public class MainActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                    }
 
+
+                    }
                 };
 
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 queue.add(loginRequest);
+
 
             }
 

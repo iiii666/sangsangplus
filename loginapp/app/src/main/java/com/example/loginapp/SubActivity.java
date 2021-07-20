@@ -2,6 +2,7 @@ package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -29,7 +30,31 @@ import android.widget.Toast;
 
 public class SubActivity extends AppCompatActivity {
 
-    TextView TextView; 
+    private Button sub_info;
+    private Button sub_service;
+    private Button sub_ex;
+   //@SuppressLint("WrongViewCast")//이거 해결해야함
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sub);
+
+         // sub_info=findViewById(R.id.sub_info);
+        // sub_service= findViewById(R.id.sub_service);
+        // sub_ex=findViewById(R.id.sub_ex);
+
+
+      /*sub_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(SubActivity.this, Myinfo.class);
+                startActivity(intent2);
+            }
+        });*/// 버튼 선언 문제
+    }
+
+
+  /*  TextView TextView;
 
     private Socket socket;
     private thread thread;
@@ -115,7 +140,7 @@ public class SubActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/ //하은이 통신 (잠시 주석처리)
 }
 
 
