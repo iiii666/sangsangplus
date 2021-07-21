@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "로그인 에 성공하였습니다", Toast.LENGTH_SHORT).show();
 
                                 Intent intent2 = new Intent(MainActivity.this,SubActivity.class);
+                                Intent intent3 = new Intent(MainActivity.this,Myinfo.class);
+                                intent3.putExtra("userID",userID);
+                                intent3.putExtra("userPassword",userPassword);
                                 startActivity(intent2);
 
                             } else {

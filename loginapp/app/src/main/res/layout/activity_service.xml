@@ -22,7 +22,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="53dp"
         android:layout_marginTop="50dp"
         app:srcCompat="@drawable/kakaotalk_20210720_022212524" />
 
@@ -45,7 +45,7 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:layout_marginTop="50dp"
         app:srcCompat="@drawable/kakaotalk_20210720_022229250" />
 
