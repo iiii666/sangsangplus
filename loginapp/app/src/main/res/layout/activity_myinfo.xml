@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.628"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.056" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/info_add"
         android:layout_width="161dp"
         android:layout_height="30dp"
         android:text="TextView"

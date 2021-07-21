@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         et_test_id=findViewById(R.id.et_test_id);
         et_test_pw=findViewById(R.id.et_test_pw);
         btn_move_lg=findViewById(R.id.btn_move_lg);
@@ -55,13 +57,17 @@ public class MainActivity extends AppCompatActivity {
                             if (success) {
                                 String userID = jsonObject.getString("userID");
                                 String userPassword = jsonObject.getString("userPassword");
+                                String userName =jsonObject.getString("userName");
                                 Toast.makeText(getApplicationContext(), "로그인 에 성공하였습니다", Toast.LENGTH_SHORT).show();
 
                                 Intent intent2 = new Intent(MainActivity.this,SubActivity.class);
                                 Intent intent3 = new Intent(MainActivity.this,Myinfo.class);
-                                intent3.putExtra("userID",userID);
-                                intent3.putExtra("userPassword",userPassword);
+                                Intent intent_add=getIntent();//주소 받아옴
+                                intent2.putExtra("userID",userID);
+                                intent2.putExtra("userPassword",userPassword);
+                                intent2.putExtra("userName",userName);
                                 startActivity(intent2);
+                               // startActivity(intent3);
 
                             } else {
 

@@ -63,6 +63,7 @@ public class AssignActivity extends AppCompatActivity {
                             if (success) {
                                 Toast.makeText(getApplicationContext(), "회원 등록에 성공하였습니다", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(AssignActivity.this, MainActivity.class);
+                                intent.putExtra("userName",userName);
                                 startActivity(intent);
                             } else {
 

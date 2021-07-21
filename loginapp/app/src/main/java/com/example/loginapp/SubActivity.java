@@ -34,6 +34,7 @@ public class SubActivity extends AppCompatActivity {
     private ImageButton sub_service;
     private ImageButton sub_ex;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +44,18 @@ public class SubActivity extends AppCompatActivity {
         sub_service= findViewById(R.id.sub_service);
         sub_ex=findViewById(R.id.sub_ex);
 
-        Intent intent3 = getIntent();
-
 
     sub_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(SubActivity.this, Myinfo.class);
+                Intent intent3 = getIntent();
+                String userID= intent3.getStringExtra("userID");
+                String userPassword= intent3.getStringExtra("userPassword");
+                String userName = intent3.getStringExtra("userName");
+                intent2.putExtra("userID",userID);
+                intent2.putExtra("userPassword",userPassword);
+                intent2.putExtra("userName",userName);
                 startActivity(intent2);
             }
         });
