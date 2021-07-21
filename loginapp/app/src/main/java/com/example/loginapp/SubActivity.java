@@ -30,27 +30,36 @@ import android.widget.Toast;
 
 public class SubActivity extends AppCompatActivity {
 
-    private Button sub_info;
-    private Button sub_service;
-    private Button sub_ex;
-   //@SuppressLint("WrongViewCast")//이거 해결해야함
+    private ImageButton sub_info;
+    private ImageButton sub_service;
+    private ImageButton sub_ex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
-         // sub_info=findViewById(R.id.sub_info);
-        // sub_service= findViewById(R.id.sub_service);
-        // sub_ex=findViewById(R.id.sub_ex);
+        sub_info=findViewById(R.id.sub_info);
+        sub_service= findViewById(R.id.sub_service);
+        sub_ex=findViewById(R.id.sub_ex);
+
+        Intent intent3 = getIntent();
 
 
-      /*sub_info.setOnClickListener(new View.OnClickListener() {
+    sub_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(SubActivity.this, Myinfo.class);
                 startActivity(intent2);
             }
-        });*/// 버튼 선언 문제
+        });
+    sub_service.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(SubActivity.this, Service.class);
+            startActivity(intent);
+        }
+    });
     }
 
 
