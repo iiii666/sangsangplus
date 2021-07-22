@@ -35,48 +35,17 @@ public class SubActivity extends AppCompatActivity {
     private ImageButton sub_ex;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
-
-        sub_info=findViewById(R.id.sub_info);
-        sub_service= findViewById(R.id.sub_service);
-        sub_ex=findViewById(R.id.sub_ex);
 
 
-    sub_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(SubActivity.this, Myinfo.class);
-                Intent intent3 = getIntent();
-                String userID= intent3.getStringExtra("userID");
-                String userPassword= intent3.getStringExtra("userPassword");
-                String userName = intent3.getStringExtra("userName");
-                intent2.putExtra("userID",userID);
-                intent2.putExtra("userPassword",userPassword);
-                intent2.putExtra("userName",userName);
-                startActivity(intent2);
-            }
-        });
-    sub_service.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(SubActivity.this, Service.class);
-            startActivity(intent);
-        }
-    });
-    }
 
-
-  /*  TextView TextView;
+    TextView TextView;
 
     private Socket socket;
     private thread thread;
     private InputStream IS;
     private PrintWriter OS;
     private int port = 8888; //서버랑 꼭 포트 번호 같게 만들어주고
-    private String SERVER_IP = "192.168.0.194";  //서버 아이피 주소 적어주세요!
+    private String SERVER_IP = "192.168.0.19";  //서버 아이피 주소 적어주세요!
 
     private ImageButton btn_service;
 
@@ -110,14 +79,14 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
-        btn_service = findViewById(R.id.btn_service);
+       /* btn_service = findViewById(R.id.btn_service);
         btn_service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SubActivity.this , Service.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 
@@ -155,10 +124,5 @@ public class SubActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/ //하은이 통신 (잠시 주석처리)
+    }
 }
-
-
-
-
-
