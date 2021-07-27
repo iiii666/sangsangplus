@@ -41,7 +41,7 @@ public class SubActivity extends AppCompatActivity {
     private InputStream IS;
     private PrintWriter OS;
     private int port = 9000; //서버랑 꼭 포트 번호 같게 만들어주고
-    private String SERVER_IP = "192.168.0.19";  //서버 아이피 주소 적어주세요!
+    private String SERVER_IP = "165.229.125.136";  //서버 아이피 주소 적어주세요!
 
 
 
@@ -49,6 +49,7 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
+
 
         sub_info=findViewById(R.id.sub_info);
         sub_service= findViewById(R.id.sub_service);
@@ -101,6 +102,32 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
+        if(TextView == null)
+        {
+
+            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
+            ad.setIcon(R.mipmap.ic_launcher);
+            ad.setTitle("위험");
+            ad.setMessage("위험상황입니까?");
+
+            final EditText et = new EditText(SubActivity.this);
+            ad.setView(et);
+
+            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+
+            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                }
+            });
+            ad.show();
+        }
+
 
     }
 
@@ -121,15 +148,16 @@ public class SubActivity extends AppCompatActivity {
                     if(data != redata)
                     {
                         TextView.setText(redata);
-                    }
+
+                        }
                     Log.d("data","data : " + redata);
-
-
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
         }
+
     }
     @Override
     protected void onStop() {
@@ -140,4 +168,5 @@ public class SubActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 }
