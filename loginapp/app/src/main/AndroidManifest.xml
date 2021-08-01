@@ -14,17 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Loginapp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SplashActivity"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Setting"></activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Service" />
         <activity android:name=".Myinfo" />
         <activity android:name=".AssignActivity" />
         <activity android:name=".SubActivity" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
