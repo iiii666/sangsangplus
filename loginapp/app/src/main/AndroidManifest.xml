@@ -5,7 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBLATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <uses-permission android:name="android.permission.DIAL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loginapp"
+
         android:usesCleartextTraffic="true">
         <activity android:name=".Setting"></activity>
         <activity android:name=".SplashActivity">
@@ -24,9 +30,14 @@
         </activity>
         <activity android:name=".Service" />
         <activity android:name=".Myinfo" />
-        <activity android:name=".AssignActivity" />
-        <activity android:name=".SubActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AssignActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            />
+        <activity android:name=".SubActivity"
+            />
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            ></activity>
     </application>
 
 </manifest>
