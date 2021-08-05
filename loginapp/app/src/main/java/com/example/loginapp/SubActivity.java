@@ -102,31 +102,34 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
-        if(TextView == null)
-        {
-
-            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
-            ad.setIcon(R.mipmap.ic_launcher);
-            ad.setTitle("위험");
-            ad.setMessage("위험상황입니까?");
-
-            final EditText et = new EditText(SubActivity.this);
-            ad.setView(et);
-
-            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
-            });
-
-            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                }
-            });
-            ad.show();
-        }
+//        if(TextView!=null)
+//        {
+//
+//            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
+//            ad.setIcon(R.mipmap.ic_launcher);
+//            ad.setTitle("위험");
+//            ad.setMessage("위험상황입니까?");
+//
+//            final EditText et = new EditText(SubActivity.this);
+//            ad.setView(et);
+//
+//            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    OS.println("Help me");
+////                    OS.flush();
+//                }
+//            });
+//
+//            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    OS.println("ignore");
+//                }
+//
+//            });
+//            ad.show();
+//        }
 
 
     }
@@ -143,15 +146,49 @@ public class SubActivity extends AppCompatActivity {
                 try {
                     IS = socket.getInputStream();
                     DataInputStream DIS = new DataInputStream(IS);
-                    DIS.read(buf,0,1024);
-                    final String redata = new String(buf,0,1024);
-                    if(data != redata)
-                    {
+                    DIS.read(buf, 0, 1024);
+                    final String redata = new String(buf, 0, 1024);
+                    if (data != redata) {
                         TextView.setText(redata);
 
+                    }
+                    Log.d("data", "data : " + redata);
+
+
+                    runOnUiThread(() -> {
+
+                        if (redata.contains("help")) {
+
+                            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
+                            ad.setIcon(R.mipmap.ic_launcher);
+                            ad.setTitle("위험");
+                            ad.setMessage("위험상황입니까?");
+
+                            final EditText et = new EditText(SubActivity.this);
+                            ad.setView(et);
+
+                            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    OS.println("1");//위험상황 맞으면 1보냄
+//                                    OS.close();
+                                    //                    OS.flush();
+                                }
+                            });
+
+                            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    OS.println("0"); //아니면 0보냄
+//                                    OS.close();
+                                }
+
+                            });
+                            ad.show();
                         }
-                    Log.d("data","data : " + redata);
+                    });
                 }catch (Exception e) {
+
                     e.printStackTrace();
                 }
             }
@@ -159,14 +196,14 @@ public class SubActivity extends AppCompatActivity {
         }
 
     }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        try {
-            socket.close(); //소켓을 닫는다.
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        try {
+//            socket.close(); //소켓을 닫는다.
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 }
