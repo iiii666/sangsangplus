@@ -2,13 +2,14 @@ package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-
+import android.net.Uri;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,6 +46,7 @@ public class SubActivity extends AppCompatActivity {
 
 
 
+    private String call_num = "01088914665";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,11 +99,17 @@ public class SubActivity extends AppCompatActivity {
         Log.d("connect success","connect success");
 
         TextView = (TextView)findViewById(R.id.TextView);
-
-
+        sub_ex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(SubActivity.this,Setting.class);
+                startActivity(intent1);
+            }
+        });
 
         //살짝 바꿨는데 잘 모르겠어요...
 
+<<<<<<< HEAD
 //        if(TextView!=null)
 //        {
 //
@@ -130,6 +138,45 @@ public class SubActivity extends AppCompatActivity {
 //            });
 //            ad.show();
 //        }
+=======
+        if(TextView != null)
+        {
+
+            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
+            ad.setIcon(R.mipmap.ic_launcher);
+            ad.setTitle("위험");
+            ad.setMessage("위험상황입니까?");
+
+            final EditText et = new EditText(SubActivity.this);
+            ad.setView(et);
+
+            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    String tel = "tel:"+call_num;
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse(tel));
+
+                        startActivity(intent);
+
+                    //startActivity(new Intent("android.intent.action.CALL", Uri.parse(tel)));
+
+
+                }
+
+            });
+
+            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            ad.show();
+        }
+>>>>>>> develop
+
 
 
     }
