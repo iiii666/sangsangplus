@@ -1,10 +1,15 @@
 package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(MainActivity.this).setContentTitle("위험 상황입니까").setContentText("5분내로 응답이 없는경우 구조요청을 합니다");
+        Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(),R.drawable.kakaotalk_20210716_130131343);
+        PendingIntent mPendingIntent = PendingIntent.getActivity(MainActivity.this,0,new Intent(getApplicationContext(),SubActivity.class),PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0,mBuilder.build());
         et_test_id=findViewById(R.id.et_test_id);
         et_test_pw=findViewById(R.id.et_test_pw);
         btn_move_lg=findViewById(R.id.btn_move_lg);

@@ -1,10 +1,15 @@
 package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -36,13 +41,14 @@ public class SubActivity extends AppCompatActivity {
     private ImageButton sub_ex;
 
     TextView TextView;
-
+    EditText et_phone1;
+    EditText et_phone2;
     private Socket socket;
     private thread thread;
     private InputStream IS;
     private PrintWriter OS;
     private int port = 9000; //서버랑 꼭 포트 번호 같게 만들어주고
-    private String SERVER_IP = "165.229.125.136";  //서버 아이피 주소 적어주세요!
+    private String SERVER_IP = "192.168.0.15";  //서버 아이피 주소 적어주세요!
 
 
 
@@ -56,7 +62,6 @@ public class SubActivity extends AppCompatActivity {
         sub_info=findViewById(R.id.sub_info);
         sub_service= findViewById(R.id.sub_service);
         sub_ex=findViewById(R.id.sub_ex);
-
         sub_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,36 +114,6 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
-<<<<<<< HEAD
-//        if(TextView!=null)
-//        {
-//
-//            AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
-//            ad.setIcon(R.mipmap.ic_launcher);
-//            ad.setTitle("위험");
-//            ad.setMessage("위험상황입니까?");
-//
-//            final EditText et = new EditText(SubActivity.this);
-//            ad.setView(et);
-//
-//            ad.setPositiveButton("네", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    OS.println("Help me");
-////                    OS.flush();
-//                }
-//            });
-//
-//            ad.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    OS.println("ignore");
-//                }
-//
-//            });
-//            ad.show();
-//        }
-=======
         if(TextView != null)
         {
 
@@ -175,7 +150,7 @@ public class SubActivity extends AppCompatActivity {
             });
             ad.show();
         }
->>>>>>> develop
+
 
 
 
@@ -205,7 +180,11 @@ public class SubActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
 
                         if (redata.contains("help")) {
-
+                           /* NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(SubActivity.this).setContentTitle("위험 상황입니까").setContentText("5분내로 응답이 없는경우 구조요청을 합니다");
+                            Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(),R.drawable.kakaotalk_20210716_130131343);
+                            PendingIntent mPendingIntent = PendingIntent.getActivity(SubActivity.this,0,new Intent(getApplicationContext(),SubActivity.class),PendingIntent.FLAG_UPDATE_CURRENT);
+                            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                            notificationManager.notify(0,mBuilder.build());*/
                             AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
                             ad.setIcon(R.mipmap.ic_launcher);
                             ad.setTitle("위험");
@@ -218,6 +197,7 @@ public class SubActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     OS.println("1");//위험상황 맞으면 1보냄
+                                    
 //                                    OS.close();
                                     //                    OS.flush();
                                 }
