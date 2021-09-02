@@ -8,6 +8,8 @@ import android.annotation.SuppressLint;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.widget.ImageButton;
@@ -47,7 +49,8 @@ public class SubActivity extends AppCompatActivity {
     private ImageButton sub_ex;
 
     TextView TextView;
-
+    EditText et_phone1;
+    EditText et_phone2;
     private Socket socket;
     private thread thread;
     private InputStream IS;
@@ -76,7 +79,6 @@ public class SubActivity extends AppCompatActivity {
         sub_info=findViewById(R.id.sub_info);
         sub_service= findViewById(R.id.sub_service);
         sub_ex=findViewById(R.id.sub_ex);
-
         sub_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,8 +133,11 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> develo
         if(TextView != null)
         {
 
@@ -199,8 +204,16 @@ public class SubActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
 
                         if (redata.contains("help")) {
+<<<<<<< HEAD
 
 
+=======
+                           /* NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(SubActivity.this).setContentTitle("위험 상황입니까").setContentText("5분내로 응답이 없는경우 구조요청을 합니다");
+                            Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(),R.drawable.kakaotalk_20210716_130131343);
+                            PendingIntent mPendingIntent = PendingIntent.getActivity(SubActivity.this,0,new Intent(getApplicationContext(),SubActivity.class),PendingIntent.FLAG_UPDATE_CURRENT);
+                            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                            notificationManager.notify(0,mBuilder.build());*/
+>>>>>>> develo
                             AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
                             ad.setIcon(R.mipmap.ic_launcher);
                             ad.setTitle("위험");
@@ -217,6 +230,7 @@ public class SubActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     OS.println("1");//위험상황 맞으면 1보냄
+                                    
 //                                    OS.close();
                                     Intent intent3 = getIntent();
                                     String userName = intent3.getStringExtra("userName");
