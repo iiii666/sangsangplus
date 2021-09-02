@@ -10,13 +10,8 @@ import java.util.Map;
 public class LoginRequest extends StringRequest {
     // 서버 url 설정
 
-<<<<<<< HEAD
-
-    final static private String URL = "http://192.168.0.16/Login.php";
-=======
     final static private String URL = "http://192.168.0.17/Login.php";
 
->>>>>>> develo
     private Map<String, String> map;
 
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener){

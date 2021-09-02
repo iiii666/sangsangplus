@@ -133,11 +133,6 @@ public class SubActivity extends AppCompatActivity {
 
         //살짝 바꿨는데 잘 모르겠어요...
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> develo
         if(TextView != null)
         {
 
@@ -204,16 +199,6 @@ public class SubActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
 
                         if (redata.contains("help")) {
-<<<<<<< HEAD
-
-
-=======
-                           /* NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(SubActivity.this).setContentTitle("위험 상황입니까").setContentText("5분내로 응답이 없는경우 구조요청을 합니다");
-                            Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(),R.drawable.kakaotalk_20210716_130131343);
-                            PendingIntent mPendingIntent = PendingIntent.getActivity(SubActivity.this,0,new Intent(getApplicationContext(),SubActivity.class),PendingIntent.FLAG_UPDATE_CURRENT);
-                            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                            notificationManager.notify(0,mBuilder.build());*/
->>>>>>> develo
                             AlertDialog.Builder ad = new AlertDialog.Builder(SubActivity.this);
                             ad.setIcon(R.mipmap.ic_launcher);
                             ad.setTitle("위험");
